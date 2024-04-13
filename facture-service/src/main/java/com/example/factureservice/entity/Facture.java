@@ -3,6 +3,7 @@ package com.example.factureservice.entity;
 import com.example.factureservice.models.Client;
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 import java.util.List;
 import java.util.UUID;
@@ -26,11 +27,12 @@ public class Facture {
 
     private double amount;
 
-    @ManyToMany
+    @ManyToMany(cascade={CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
             name = "facture_product",
             joinColumns = @JoinColumn(name = "facture_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id"))
+    @RestResource(exported = false)
     private List<FactureProducts> orders;
 
 }

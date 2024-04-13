@@ -17,6 +17,7 @@ import java.util.UUID;
 
 @AllArgsConstructor
 @RestController
+@RequestMapping("/api")
 public class FactureController {
     private FactureRepository factureRepository;
     private FactureProductsRepository factureProductsRepository;
@@ -28,13 +29,12 @@ public class FactureController {
 //        return clientRest.getAllClients();
         List<Facture> factures = factureRepository.findAll();
         if (!factures.isEmpty()) {
-            for (Facture facture : factures) {
+            factures.forEach(facture -> {
                 facture.setClient(clientRest.getClientById(facture.getClientId()));
-                for(FactureProducts f : facture.getOrders()){
-                    Product p = productRest.getProductById(f.getProductId());
-                    f.setProduct(p);
-                }
-            }
+                facture.getOrders().forEach(product -> {
+                    product.setProduct(productRest.getProductById(product.getProductId()));
+                });
+            });
             return factures;
         };
         return factureRepository.findAll();

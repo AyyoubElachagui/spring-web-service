@@ -46,13 +46,13 @@ public class FactureServiceApplication {
 					.build();
 			Facture factureRepositoryResponse1 = factureRepository.save(facture1);
 			Facture factureRepositoryResponse2 = factureRepository.save(facture2);
-			Product product1 = productRest.getProductById(UUID.fromString("304c6939-a6f1-4bad-9f13-c670943098e6"));
+			Product product1 = productRest.getProductById(UUID.fromString("d00e9738-b95a-4255-88b1-5f6303e85df7"));
 			FactureProducts factureProducts1 = FactureProducts.builder()
 					.productId(product1.getId())
 					.product(product1)
 					.build();
 
-			Product product2 = productRest.getProductById(UUID.fromString("97316dc4-ac51-4e5c-8a62-6c8b5cfd23e0"));
+			Product product2 = productRest.getProductById(UUID.fromString("b0877c8d-b031-45a0-acca-015b432f9ce1"));
 			FactureProducts factureProducts2 = FactureProducts.builder()
 					.productId(product2.getId())
 					.product(product2)
