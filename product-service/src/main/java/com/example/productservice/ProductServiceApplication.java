@@ -22,14 +22,14 @@ public class ProductServiceApplication {
 		return args -> {
 			List<Product> products = List.of(
 					Product.builder()
-							.id(UUID.randomUUID())
+							.id(UUID.fromString("d00e9738-b95a-4255-88b1-5f6303e85df7"))
 							.type("Type 1")
 							.reference("reference 1")
 							.description("description 1")
 							.price(100.39)
 							.build(),
 					Product.builder()
-							.id(UUID.randomUUID())
+							.id(UUID.fromString("b0877c8d-b031-45a0-acca-015b432f9ce1"))
 							.type("Type 2")
 							.reference("reference 2")
 							.description("description 2")

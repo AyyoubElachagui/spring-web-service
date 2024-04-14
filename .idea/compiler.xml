@@ -7,15 +7,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="config-service" />
-        <module name="facture-service" />
-        <module name="gateway-service" />
         <module name="Ecommerce" />
         <module name="product-service" />
+        <module name="facture-service" />
+        <module name="gateway-service" />
         <module name="discovery-service" />
         <module name="client-service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="config-service" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
